@@ -1,0 +1,14 @@
+# This timer is for changing the remarkable screen
+# By Daylin Morgan
+# Licensed under MIT
+
+[Unit]
+Description = Changes /usr/share/remarkable/suspended.png to a random file
+Requires = swapSuspended.service
+
+[Timer]
+Unit=swapSuspended.service
+OnCalendar=*-*-* *:00:00
+
+[Install]
+WantedBy=timers.target

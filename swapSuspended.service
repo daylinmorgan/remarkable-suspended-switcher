@@ -1,0 +1,14 @@
+# This service is for changing the remarkable screen
+# By Daylin Morgan
+# Licensed under MIT
+
+[Unit]
+Description = Changes /usr/share/remarkable/suspended.png to a random file
+Wants=swapSuspended.timer
+
+[Service]
+Type=oneshat
+ExecStart=/home/root/set-suspended.sh
+
+[Install]
+WantedBy=multi-user.target
